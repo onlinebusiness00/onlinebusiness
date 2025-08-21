@@ -1,2 +1,1539 @@
-# onlinebusiness
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldPath | Votre succès financier commence ici</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --navy: #0A2463;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 36, 99, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), 
+                        url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+            color: white;
+            padding: 0 5%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .primary-btn {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+        
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .secondary-btn:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Section En Savoir Plus */
+        .learn-more {
+            padding: 6rem 5%;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .info-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--gold);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        /* Section FAQ */
+        .faq {
+            padding: 6rem 5%;
+            background: var(--light);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question:hover {
+            background: #f5f5f5;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        
+        .faq-answer p {
+            padding: 1.5rem 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--navy);
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-60px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
+        }
+        
+        /* Styles for the investment form */
+        .investment-form-container {
+            padding: 20px;
+        }
+        
+        .investment-form-container .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        /* Onglets */
+        .investment-form-container .tabs {
+            display: flex;
+            background: #f5f5f5;
+            flex-wrap: wrap;
+        }
+        
+        .investment-form-container .tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .investment-form-container .tab.active {
+            background: white;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .investment-form-container .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        /* Contenu des onglets */
+        .investment-form-container .tab-content {
+            display: none;
+            padding: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .investment-form-container .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Barre de progression */
+        .investment-form-container .progress-container {
+            margin: 30px 0;
+        }
+        
+        .investment-form-container .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .investment-form-container .progress-bar {
+            height: 20px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .investment-form-container .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), #FFAA00);
+            width: 0%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+        
+        /* Témoignages */
+        .investment-form-container .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .investment-form-container .testimonial-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        
+        .investment-form-container .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .investment-form-container .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Boutons */
+        .investment-form-container .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .investment-form-container .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        
+        .investment-form-container .btn-primary:hover {
+            background: #e6c300;
+            transform: translateY(-2px);
+        }
+        
+        .investment-form-container .btn-secondary {
+            background: #eee;
+            color: #666;
+        }
+        
+        .investment-form-container .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        /* Navigation */
+        .investment-form-container .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        /* Formulaires */
+        .investment-form-container .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .investment-form-container .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .investment-form-container .form-group input, .investment-form-container .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        /* Grille tarifaire */
+        .investment-form-container .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .investment-form-container .pricing-card {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .investment-form-container .pricing-card.selected {
+            border-color: var(--gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+        
+        .investment-form-container .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 10px 0;
+        }
+        
+        /* Section dépôt */
+        .investment-form-container .deposit-methods {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .investment-form-container .deposit-method {
+            margin-bottom: 15px;
+        }
+        
+        .investment-form-container .method-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .investment-form-container .method-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .investment-form-container .copy-btn {
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        /* Onglets devises */
+        .investment-form-container .currency-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .investment-form-container .currency-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .investment-form-container .currency-tab.active {
+            border-bottom-color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .investment-form-container .currency-content {
+            display: none;
+        }
+        
+        .investment-form-container .currency-content.active {
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .investment-form-container .tabs {
+                flex-direction: column;
+            }
+            
+            .investment-form-container .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-gem"></i> GoldPath
+        </div>
+        <div class="nav-links">
+            <a href="#home">Accueil</a>
+            <a href="#learn-more">En savoir plus</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transformez votre épargne en <span style="color: var(--gold);">revenus passifs</span></h1>
+            <p>Notre plateforme exclusive a permis à plus de 10,000 membres de générer des rendements supérieurs à 15% par an grâce à notre méthode brevetée.</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary-btn" id="open-investment-modal">
+                    <i class="fas fa-lock-open"></i> Commencer maintenant
+                </a>
+                <a href="#learn-more" class="cta-button secondary-btn">
+                    <i class="fas fa-info-circle"></i> En savoir plus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section En Savoir Plus -->
+    <section class="learn-more" id="learn-more">
+        <h2 class="section-title">Découvrez notre méthode</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #666;">
+            Une approche scientifique du marché financier pour des résultats exceptionnels
+        </p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Analyse de marché avancée</h3>
+                <p>Notre algorithme propriétaire scanne en permanence les marchés pour identifier les opportunités les plus prometteuses avec un ratio risque/rendement optimal.</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Protection du capital</h3>
+                <p>Nous utilisons des stratégies de couverture sophistiquées pour protéger votre investissement contre les fluctuations brutales du marché.</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Accompagnement personnalisé</h3>
+                <p>Chaque membre bénéficie d'un conseiller dédié pour adapter la stratégie à ses objectifs financiers et à sa tolérance au risque.</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-history"></i>
+                <h3>Historique vérifiable</h3>
+                <p>Nos performances sont auditées chaque trimestre par un cabinet indépendant. Consultez nos rapports détaillés depuis 2018.</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Formation complète</h3>
+                <p>Accès à notre académie en ligne avec plus de 50 heures de vidéos formatives pour comprendre les marchés financiers.</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Application dédiée</h3>
+                <p>Suivez vos investissements en temps réel et recevez des alertes personnalisées via notre application mobile primée.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Questions fréquentes</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quel est le capital minimum pour commencer ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Notre plateforme est accessible à partir de 500€ d'investissement initial. Cette somme nous permet de diversifier suffisamment votre portefeuille pour appliquer nos stratégies de réduction des risques.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quels sont les frais associés ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Nous appliquons une commission de performance de 20% sur les gains au-delà de 5% par an. Aucun frais n'est prélevé sur le capital ou sur les performances inférieures à ce seuil. Il n'y a pas de frais d'entrée ou de sortie.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Comment puis-je retirer mes gains ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Les retraits sont possibles à tout moment, avec un délai de traitement de 48 heures ouvrables. Vous pouvez choisir de recevoir vos fonds par virement bancaire ou de les réinvestir automatiquement.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Est-ce adapté aux débutants ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Absolument. 65% de nos membres n'avaient aucune expérience en investissement avant de nous rejoindre. Notre académie en ligne et nos conseillers vous guident pas à pas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>GoldPath</h3>
+                <p>La plateforme d'investissement intelligente pour ceux qui veulent faire travailler leur argent sans y consacrer leur temps.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#learn-more">Notre méthode</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Légal</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">CGU</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Rapports financiers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contact@goldpath.com</li>
+                    <li><i class="fas fa-phone"></i> +237 656 055 749</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 25 Rue de la Finance, 75001 Paris</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 GoldPath. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Investment Form -->
+    <div id="investment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="investment-form-container">
+                <div class="container">
+                    <!-- Barre d'onglets -->
+                    <div class="tabs">
+                        <div class="tab active" data-tab="register">Inscription</div>
+                        <div class="tab" data-tab="pricing">Investissement</div>
+                        <div class="tab" data-tab="deposit">Dépôt</div>
+                        <div class="tab" data-tab="progress">Progression</div>
+                        <div class="tab" data-tab="testimonials">Témoignages</div>
+                        <div class="tab" data-tab="confirm">Confirmation</div>
+                    </div>
+                    
+                    <!-- Onglet 1: Inscription -->
+                    <div id="register" class="tab-content active">
+                        <h2>Inscription</h2>
+                        <p>Remplissez ce formulaire pour commencer.</p>
+                        
+                        <form id="registrationForm">
+                            <div class="form-group">
+                                <label for="fullName">Nom complet</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            
+                            <div class="nav-buttons">
+                                <div></div>
+                                <button type="button" id="nextToPricing" class="btn btn-primary">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Onglet 2: Investissement -->
+                    <div id="pricing" class="tab-content">
+                        <h2>Montant d'investissement</h2>
+                        <p>Sélectionnez votre devise et montant :</p>
+                        
+                        <!-- Onglets devises -->
+                        <div class="currency-tabs">
+                            <div class="currency-tab active" data-currency="fcfa">FCFA</div>
+                            <div class="currency-tab" data-currency="usd">USD ($)</div>
+                            <div class="currency-tab" data-currency="eur">EUR (€)</div>
+                        </div>
+                        
+                        <!-- Contenu FCFA -->
+                        <div id="fcfa-content" class="currency-content active">
+                            <div class="pricing-grid">
+                                <div class="pricing-card" data-amount="10000" data-currency="FCFA">
+                                    <h3>Débutant</h3>
+                                    <div class="price">10,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="25000" data-currency="FCFA">
+                                    <h3>Starter</h3>
+                                    <div class="price">25,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="50000" data-currency="FCFA">
+                                    <h3>Standard</h3>
+                                    <div class="price">50,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="100000" data-currency="FCFA">
+                                    <h3>Avancé</h3>
+                                    <div class="price">100,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="250000" data-currency="FCFA">
+                                    <h3>Premium</h3>
+                                    <div class="price">250,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="500000" data-currency="FCFA">
+                                    <h3>VIP</h3>
+                                    <div class="price">500,000 FCFA</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="800000" data-currency="FCFA">
+                                    <h3>VVIP</h3>
+                                    <div class="price">800,000 FCFA</div>
+                                </div>
+                                <div class="pricing-card" data-amount="1000000" data-currency="FCFA">
+                                    <h3>Expert</h3>
+                                    <div class="price">1,000,000 FCFA</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu USD -->
+                        <div id="usd-content" class="currency-content">
+                            <div class="pricing-grid">
+                                <div class="pricing-card" data-amount="100" data-currency="USD">
+                                    <h3>Basic</h3>
+                                    <div class="price">100 $</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="250" data-currency="USD">
+                                    <h3>Starter</h3>
+                                    <div class="price">250 $</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="500" data-currency="USD">
+                                    <h3>Standard</h3>
+                                    <div class="price">500 $</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="1000" data-currency="USD">
+                                    <h3>Advanced</h3>
+                                    <div class="price">1,000 $</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="2500" data-currency="USD">
+                                    <h3>Premium</h3>
+                                    <div class="price">2,500 $</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="5000" data-currency="USD">
+                                    <h3>VIP</h3>
+                                    <div class="price">5,000 $</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu EUR -->
+                        <div id="eur-content" class="currency-content">
+                            <div class="pricing-grid">
+                                <div class="pricing-card" data-amount="100" data-currency="EUR">
+                                    <h3>Basique</h3>
+                                    <div class="price">100 €</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="250" data-currency="EUR">
+                                    <h3>Débutant</h3>
+                                    <div class="price">250 €</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="500" data-currency="EUR">
+                                    <h3>Standard</h3>
+                                    <div class="price">500 €</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="1000" data-currency="EUR">
+                                    <h3>Avancé</h3>
+                                    <div class="price">1,000 €</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="2500" data-currency="EUR">
+                                    <h3>Premium</h3>
+                                    <div class="price">2,500 €</div>
+                                </div>
+                                
+                                <div class="pricing-card" data-amount="5000" data-currency="EUR">
+                                    <h3>VIP</h3>
+                                    <div class="price">5,000 €</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input type="hidden" id="selectedAmount">
+                        <input type="hidden" id="selectedCurrency">
+                        
+                        <div class="nav-buttons">
+                            <button type="button" id="backToRegister" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Retour
+                            </button>
+                            <button type="button" id="nextToDeposit" class="btn btn-primary">
+                                Suivant <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Nouvel Onglet: Dépôt -->
+                    <div id="deposit" class="tab-content">
+                        <h2>Méthodes de dépôt</h2>
+                        <p>Effectuez votre dépôt sur l'un de nos comptes :</p>
+                        
+                        <div class="deposit-methods">
+                            <div class="deposit-method">
+                                <div class="method-title">Mobile Money (Orange Money, MTN Mobile Money)</div>
+                                <div class="method-details">
+                                    <span id="mobile-number">+237 6XX XXX XXX</span>
+                                    <button class="copy-btn" onclick="copyToClipboard('mobile-number')">
+                                        <i class="fas fa-copy"></i> Copier
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="deposit-method">
+                                <div class="method-title">Virement Bancaire</div>
+                                <div class="method-details">
+                                    <span id="bank-details">Banque: XXX | Code: XXX | Compte: XXX</span>
+                                    <button class="copy-btn" onclick="copyToClipboard('bank-details')">
+                                        <i class="fas fa-copy"></i> Copier
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="deposit-method">
+                                <div class="method-title">Western Union/MoneyGram</div>
+                                <div class="method-details">
+                                    <span id="transfer-details">Nom: XXX | Pays: XXX | Ville: XXX</span>
+                                    <button class="copy-btn" onclick="copyToClipboard('transfer-details')">
+                                        <i class="fas fa-copy"></i> Copier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deposit-proof">Preuve de dépôt (capture d'écran ou reçu)</label>
+                            <input type="file" id="deposit-proof" accept="image/*,.pdf">
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <button type="button" id="backToPricing" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Retour
+                            </button>
+                            <button type="button" id="nextToProgress" class="btn btn-primary">
+                                Suivant <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet 4: Progression -->
+                    <div id="progress" class="tab-content">
+                        <h2>Votre progression</h2>
+                        <p>Votre niveau d'investissement :</p>
+                        
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Progression</span>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <p class="progress-text">
+                                Investissement : <span id="current-invest">0</span> / <span id="max-invest">1,000,000 FCFA</span> (max 100%)
+                            </p>
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <button type="button" id="backToDeposit" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Retour
+                            </button>
+                            <button type="button" id="nextToTestimonials" class="btn btn-primary">
+                                Suivant <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet 5: Témoignages -->
+                    <div id="testimonials" class="tab-content">
+                        <h2>Témoignages</h2>
+                        <p>Ce que nos investisseurs disent :</p>
+                        
+                        <div class="testimonials">
+                            <div class="testimonial-card">
+                                <p>"J'ai obtenu un rendement de 15% en 3 mois seulement. Service exceptionnel !"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">JD</div>
+                                    <div>
+                                        <h4>Jean D.</h4>
+                                        <small>Investisseur depuis 2021</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <p>"L'équipe m'a guidé à chaque étape. Je recommande vivement."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">MS</div>
+                                    <div>
+                                        <h4>Marie S.</h4>
+                                        <small>Entrepreneure</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <p>"La meilleure décision financière que j'ai prise cette année."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">PK</div>
+                                    <div>
+                                        <h4>Paul K.</h4>
+                                        <small>Investisseur VIP</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <button type="button" id="backToProgress" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Retour
+                            </button>
+                            <button type="button" id="nextToConfirmFromTestimonials" class="btn btn-primary">
+                                Finaliser <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet 6: Confirmation -->
+                    <div id="confirm" class="tab-content">
+                        <h2>Confirmation</h2>
+                        <p>Vos informations :</p>
+                        
+                        <div style="margin: 20px 0; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+                            <p><strong>Nom :</strong> <span id="summary-name"></span></p>
+                            <p><strong>Email :</strong> <span id="summary-email"></span></p>
+                            <p><strong>Téléphone :</strong> <span id="summary-phone"></span></p>
+                            <p><strong>Montant :</strong> <span id="summary-amount"></span></p>
+                            <p><strong>Devise :</strong> <span id="summary-currency"></span></p>
+                            <p><strong>Progression :</strong> <span id="summary-progress"></span></p>
+                            <p><strong>Preuve de dépôt :</strong> <span id="summary-proof"></span></p>
+                        </div>
+                        
+                        <p>Cliquez pour envoyer à notre équipe :</p>
+                        <a id="whatsappBtn" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                        </a>
+                        
+                        <div class="nav-buttons">
+                            <button type="button" id="backToTestimonials" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Retour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Fermer les autres items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Effets de particules dorées pour la hero section
+        document.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero');
+            
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'absolute';
+                sparkle.style.width = Math.random() * 6 + 2 + 'px';
+                sparkle.style.height = sparkle.style.width;
+                sparkle.style.backgroundColor = '#FFD700';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.opacity = Math.random() * 0.7 + 0.3;
+                sparkle.style.boxShadow = '0 0 8px 2px #FFD700';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '1';
+                
+                hero.appendChild(sparkle);
+                
+                // Animation
+                const duration = Math.random() * 3 + 2;
+                sparkle.style.transition = `all ${duration}s linear`;
+                
+                setTimeout(() => {
+                    sparkle.style.opacity = '0';
+                    sparkle.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
+                }, 10);
+                
+                // Suppression après animation
+                setTimeout(() => sparkle.remove(), duration * 1000);
+            }
+            
+            // Crée des particules régulièrement
+            setInterval(createSparkle, 100);
+            
+            // Modal functionality
+            const modal = document.getElementById("investment-modal");
+            const openModalBtn = document.getElementById("open-investment-modal");
+            const closeModalBtn = document.querySelector(".close-modal");
+            
+            openModalBtn.addEventListener("click", function() {
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Prevent scrolling
+            });
+            
+            closeModalBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Enable scrolling
+            });
+            
+            window.addEventListener("click", function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto"; // Enable scrolling
+                }
+            });
+        });
+        
+        // Investment Form Script
+        // Données utilisateur
+        const userData = {
+            fullName: '',
+            email: '',
+            phone: '',
+            amount: '',
+            currency: 'FCFA',
+            progress: 0,
+            depositProof: ''
+        };
+        
+        // Éléments du DOM
+        const tabs = document.querySelectorAll('.investment-form-container .tab');
+        const tabContents = document.querySelectorAll('.investment-form-container .tab-content');
+        const currencyTabs = document.querySelectorAll('.investment-form-container .currency-tab');
+        const currencyContents = document.querySelectorAll('.investment-form-container .currency-content');
+        
+        // Fonction pour changer d'onglet
+        function switchTab(tabId) {
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.tab === tabId);
+            });
+            
+            tabContents.forEach(content => {
+                content.classList.toggle('active', content.id === tabId);
+            });
+        }
+        
+        // Fonction pour changer de devise
+        function switchCurrency(currency) {
+            currencyTabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.currency === currency);
+            });
+            
+            currencyContents.forEach(content => {
+                content.classList.toggle('active', content.id === `${currency}-content`);
+            });
+            
+            userData.currency = currency.toUpperCase();
+            document.getElementById('selectedCurrency').value = userData.currency;
+            
+            // Mettre à jour le montant max affiché selon la devise
+            const maxInvestElement = document.getElementById('max-invest');
+            if (currency === 'fcfa') {
+                maxInvestElement.textContent = '800,000 FCFA';
+            } else if (currency === 'usd') {
+                maxInvestElement.textContent = '5,000 $';
+            } else if (currency === 'eur') {
+                maxInvestElement.textContent = '5,000 €';
+            }
+        }
+        
+        // Gestion des onglets principaux
+        if (tabs.length > 0) {
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    if (tab.dataset.tab === 'pricing' && !userData.fullName) {
+                        alert('Veuillez d\'abord remplir le formulaire');
+                        return;
+                    }
+                    switchTab(tab.dataset.tab);
+                });
+            });
+        }
+        
+        // Gestion des onglets de devises
+        if (currencyTabs.length > 0) {
+            currencyTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    switchCurrency(tab.dataset.currency);
+                });
+            });
+        }
+        
+        // Formulaire d'inscription
+        const nextToPricingBtn = document.getElementById('nextToPricing');
+        if (nextToPricingBtn) {
+            nextToPricingBtn.addEventListener('click', () => {
+                userData.fullName = document.getElementById('fullName').value;
+                userData.email = document.getElementById('email').value;
+                userData.phone = document.getElementById('phone').value;
+                
+                if (!userData.fullName || !userData.email || !userData.phone) {
+                    alert('Veuillez remplir tous les champs');
+                    return;
+                }
+                
+                switchTab('pricing');
+            });
+        }
+        
+        // Sélection du montant
+        const pricingCards = document.querySelectorAll('.investment-form-container .pricing-card');
+        if (pricingCards.length > 0) {
+            pricingCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    pricingCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    userData.amount = card.dataset.amount;
+                    document.getElementById('selectedAmount').value = userData.amount;
+                    userData.currency = card.dataset.currency;
+                    document.getElementById('selectedCurrency').value = userData.currency;
+                });
+            });
+        }
+        
+        // Gestion du fichier de preuve de dépôt
+        const depositProofInput = document.getElementById('deposit-proof');
+        if (depositProofInput) {
+            depositProofInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    userData.depositProof = file.name;
+                    document.getElementById('summary-proof').textContent = file.name;
+                }
+            });
+        }
+        
+        // Fonction pour copier le texte
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copié dans le presse-papier: ' + text);
+            });
+        }
+        
+        // Barre de progression
+        function updateProgress() {
+            const amount = parseInt(userData.amount) || 0;
+            let maxAmount = 800000; // Par défaut pour FCFA
+            
+            if (userData.currency === 'USD') {
+                maxAmount = 5000;
+            } else if (userData.currency === 'EUR') {
+                maxAmount = 5000;
+            }
+            
+            userData.progress = Math.min((amount / maxAmount) * 95, 95); // Max 95%
+            
+            document.getElementById('progress-fill').style.width = `${userData.progress}%`;
+            document.getElementById('progress-percent').textContent = `${userData.progress.toFixed(1)}%`;
+            
+            // Formatage du montant selon la devise
+            let formattedAmount;
+            if (userData.currency === 'FCFA') {
+                formattedAmount = `${parseInt(userData.amount).toLocaleString()} FCFA`;
+            } else if (userData.currency === 'USD') {
+                formattedAmount = `${parseInt(userData.amount).toLocaleString()} $`;
+            } else {
+                formattedAmount = `${parseInt(userData.amount).toLocaleString()} €`;
+            }
+            
+            document.getElementById('current-invest').textContent = formattedAmount;
+            
+            // Mise à jour du récapitulatif
+            document.getElementById('summary-name').textContent = userData.fullName;
+            document.getElementById('summary-email').textContent = userData.email;
+            document.getElementById('summary-phone').textContent = userData.phone;
+            document.getElementById('summary-amount').textContent = formattedAmount;
+            document.getElementById('summary-currency').textContent = userData.currency;
+            document.getElementById('summary-progress').textContent = `${userData.progress.toFixed(1)}%`;
+            
+            // Préparation du lien WhatsApp
+            const whatsappNumber = '237656055749';
+            const message = `Nouvelle demande d'investissement Online business\n\n` +
+                           `*Nom:* ${userData.fullName}\n` +
+                           `*Email:* ${userData.email}\n` +
+                           `*Téléphone:* ${userData.phone}\n` +
+                           `*Montant:* ${formattedAmount}\n` +
+                           `*Devise:* ${userData.currency}\n` +
+                           `*Progression:* ${userData.progress.toFixed(1)}%\n` +
+                           `*Preuve de dépôt:* ${userData.depositProof || 'Non fournie'}\n\n` +
+                           `Je souhaite commencer.`;
+            
+            document.getElementById('whatsappBtn').href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        }
+        
+        // Navigation entre onglets
+        const nextToDepositBtn = document.getElementById('nextToDeposit');
+        if (nextToDepositBtn) {
+            nextToDepositBtn.addEventListener('click', () => {
+                if (!userData.amount) {
+                    alert('Veuillez sélectionner un montant');
+                    return;
+                }
+                switchTab('deposit');
+            });
+        }
+        
+        const backToRegisterBtn = document.getElementById('backToRegister');
+        if (backToRegisterBtn) {
+            backToRegisterBtn.addEventListener('click', () => {
+                switchTab('register');
+            });
+        }
+        
+        const nextToProgressBtn = document.getElementById('nextToProgress');
+        if (nextToProgressBtn) {
+            nextToProgressBtn.addEventListener('click', () => {
+                if (!userData.depositProof) {
+                    if (!confirm('Vous n\'avez pas ajouté de preuve de dépôt. Continuer quand même?')) {
+                        return;
+                    }
+                }
+                updateProgress();
+                switchTab('progress');
+            });
+        }
+        
+        const backToPricingBtn = document.getElementById('backToPricing');
+        if (backToPricingBtn) {
+            backToPricingBtn.addEventListener('click', () => {
+                switchTab('pricing');
+            });
+        }
+        
+        const nextToTestimonialsBtn = document.getElementById('nextToTestimonials');
+        if (nextToTestimonialsBtn) {
+            nextToTestimonialsBtn.addEventListener('click', () => {
+                switchTab('testimonials');
+            });
+        }
+        
+        const backToDepositBtn = document.getElementById('backToDeposit');
+        if (backToDepositBtn) {
+            backToDepositBtn.addEventListener('click', () => {
+                switchTab('deposit');
+            });
+        }
+        
+        const nextToConfirmFromTestimonialsBtn = document.getElementById('nextToConfirmFromTestimonials');
+        if (nextToConfirmFromTestimonialsBtn) {
+            nextToConfirmFromTestimonialsBtn.addEventListener('click', () => {
+                switchTab('confirm');
+            });
+        }
+        
+        const backToProgressBtn = document.getElementById('backToProgress');
+        if (backToProgressBtn) {
+            backToProgressBtn.addEventListener('click', () => {
+                switchTab('progress');
+            });
+        }
+        
+        const backToTestimonialsBtn = document.getElementById('backToTestimonials');
+        if (backToTestimonialsBtn) {
+            backToTestimonialsBtn.addEventListener('click', () => {
+                switchTab('testimonials');
+            });
+        }
+        
+        // Initialisation
+        updateProgress();
+    </script>
+</body>
+</html># onlinebusiness
 site web
